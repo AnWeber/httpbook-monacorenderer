@@ -1,0 +1,100 @@
+{
+  "name": "httpbook-monacorenderer",
+  "displayName": "httpBook - Monaco Editor Renderer",
+  "description": "Monaco Editor for httpbook",
+  "version": "1.0.0",
+  "publisher": "anweber",
+  "homepage": "https://github.com/AnWeber/httpbook-monacorenderer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnWeber/httpbook-monacorenderer"
+  },
+  "bugs": {
+    "url": "https://github.com/AnWeber/httpbook-monacorenderer/issues"
+  },
+  "qna": "https://github.com/AnWeber/httpbook-monacorenderer/discussions",
+  "engines": {
+    "vscode": "^1.58.1"
+  },
+  "categories": [
+    "Notebooks"
+  ],
+  "keywords": [
+    "HTTP",
+    "Httpbook",
+    "MonacoEditor"
+  ],
+  "icon": "icon.png",
+  "preview": true,
+  "activationEvents": [
+    "onNotebook:http",
+    "onLanguage:http"
+  ],
+  "main": "./dist/extension.js",
+  "capabilities": {
+    "virtualWorkspaces": true
+  },
+  "contributes": {
+    "notebookRenderer": [
+      {
+        "id": "httpbook-monaco",
+        "entrypoint": "./dist/monacoRenderer.js",
+        "displayName": "httpbook",
+        "mimeTypes": [
+          "x-application/httpbook-monaco-editor",
+          "x-httpbookmonaco/json",
+          "x-httpbookmonaco/css",
+          "x-httpbookmonaco/html",
+          "x-httpbookmonaco/markdown",
+          "x-httpbookmonaco/plain",
+          "x-httpbookmonaco/javascript",
+          "x-httpbookmonaco/xml"
+        ]
+      }
+    ]
+  },
+  "extensionDependencies": [
+    "anweber.httpbook"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "webpack --mode production --config ./webpack.config.js",
+    "watch": "webpack --mode development --watch --config ./webpack.config.js",
+    "lockfile-lint": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm --validate-checksum --validate-integrity",
+    "eslint": "eslint src --ext ts",
+    "lint": "npm run eslint && npm run lockfile-lint",
+    "precommit": "npm run lint"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.7",
+    "@types/react": "^17.0.15",
+    "@types/vscode": "1.58.1",
+    "@types/vscode-notebook-renderer": "^1.57.11",
+    "@types/webpack-env": "^1.16.2",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "css-loader": "^6.2.0",
+    "eslint": "^7.31.0",
+    "eslint-plugin-node": "^11.1.0",
+    "file-loader": "^6.2.0",
+    "fork-ts-checker-webpack-plugin": "^6.2.13",
+		"httpyac": "^2.21.1",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
+    "lockfile-lint": "^4.6.2",
+    "monaco-editor-webpack-plugin": "^4.1.1",
+    "style-loader": "^3.2.1",
+    "svg-sprite-loader": "^6.0.9",
+    "thread-loader": "^3.0.4",
+    "ts-loader": "^9.2.4",
+    "typescript": "^4.3.5",
+    "vscode-dts": "^0.3.1",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.26.1",
+    "preact": "^10.5.14",
+    "vscode-codicons": "^0.0.17"
+  }
+}
