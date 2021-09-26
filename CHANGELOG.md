@@ -1,3 +1,8 @@
+## 1.1.0 (2021-09-26)
+
+* update to monaco editor 0.28.1
+* fix missing icons
+
 ## 1.0.0 (2021-07-30)
 
 #### Features

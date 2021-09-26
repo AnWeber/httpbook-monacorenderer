@@ -6,6 +6,10 @@
 
 MonacoEditor Notebook Renderer for [httpbook](https://marketplace.visualstudio.com/items?itemName=anweber.httpbook)
 
+## Features
+* built-in find dialog
+* format document
+
 ![example](https://raw.githubusercontent.com/AnWeber/httpbook-grid/main/examples/grid.gif)
 
 
