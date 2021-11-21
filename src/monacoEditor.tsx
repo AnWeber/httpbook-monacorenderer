@@ -3,19 +3,18 @@ import { h, Component } from 'preact';
 import type { editor } from 'monaco-editor';
 import './monacoEditor.css';
 
-export interface MonacoEditorProps{
-  value: string,
-  mimeType: string,
+export interface MonacoEditorProps {
+  value: string;
+  mimeType: string;
 }
 
-export class MonacoEditor extends Component<MonacoEditorProps,
-  { editor: editor.IStandaloneCodeEditor }> {
+export class MonacoEditor extends Component<MonacoEditorProps, { editor: editor.IStandaloneCodeEditor }> {
   private ref: HTMLElement | null = null;
   async componentDidMount(): Promise<void> {
     if (this.ref) {
-
-      const { editor } = await import(/* webpackChunkName: "monacoeditor" */ 'monaco-editor/esm/vs/editor/editor.api.js');
-
+      const { editor } = await import(
+        /* webpackChunkName: "monacoeditor" */ 'monaco-editor/esm/vs/editor/editor.api.js'
+      );
 
       if (document.body.className.indexOf('vscode-dark') >= 0) {
         editor.setTheme('vs-dark');
@@ -28,17 +27,15 @@ export class MonacoEditor extends Component<MonacoEditorProps,
 
       const monacoEditor = editor.create(
         this.ref,
-        Object.assign(
-          {
-            fontFamily: computedStyle.getPropertyValue('--theme-code-font-family'),
-            fontSize: +computedStyle.getPropertyValue('--theme-code-font-size').replace('px', ''),
-            fontWeight: computedStyle.getPropertyValue('--theme-code-font-weight'),
-            language: this.getLanguageId(this.props.mimeType),
-            minimap: {
-              enabled: false
-            },
-          }
-        )
+        Object.assign({
+          fontFamily: computedStyle.getPropertyValue('--theme-code-font-family'),
+          fontSize: +computedStyle.getPropertyValue('--theme-code-font-size').replace('px', ''),
+          fontWeight: computedStyle.getPropertyValue('--theme-code-font-weight'),
+          language: this.getLanguageId(this.props.mimeType),
+          minimap: {
+            enabled: false,
+          },
+        })
       );
 
       const model = monacoEditor.getModel();
@@ -53,12 +50,10 @@ export class MonacoEditor extends Component<MonacoEditorProps,
       monacoEditor.setValue(this.props.value);
 
       this.state = {
-        editor: monacoEditor
+        editor: monacoEditor,
       };
     }
-
   }
-
 
   private getLanguageId(mimeType: string): string {
     if (/^(application|text|x-monacoeditor)\/(.*\+|x-amz-)?json.*$/u.test(mimeType)) {
@@ -89,10 +84,12 @@ export class MonacoEditor extends Component<MonacoEditorProps,
   render(): h.JSX.Element {
     return (
       <section>
-        <div class="editor" ref={ref => {
-          this.ref = ref;
-        }}>
-        </div>
+        <div
+          class="editor"
+          ref={ref => {
+            this.ref = ref;
+          }}
+        ></div>
       </section>
     );
   }
