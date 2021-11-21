@@ -1,3 +1,7 @@
+## 2.0.0 (2021-11-21)
+
+* use built-in mimetypes to allow Renderer only Extension (vscode.dev support)
+
 ## 1.1.0 (2021-09-26)
 
 * update to monaco editor 0.28.1

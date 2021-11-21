@@ -1,25 +1,14 @@
-<p align="center">
-<img src="https://raw.githubusercontent.com/AnWeber/httpbook/main/icon.png" alt="HttpYac Logo" />
-</p>
+# MonacoEditor Renderer
 
-# Httpbook - MonacoEditor Renderer
+MonacoEditor Notebook Renderer used to open Find Dialog in Notebook Output
 
-MonacoEditor Notebook Renderer for [httpbook](https://marketplace.visualstudio.com/items?itemName=anweber.httpbook)
+![MonacoEditor Renderer in httpBook](https://raw.githubusercontent.com/AnWeber/httpbook-monacorenderer/main/assets/monacoeditor.png)
+
+> initially developed for [httpbook](https://marketplace.visualstudio.com/items?itemName=anweber.httpbook)
 
 ## Features
 * built-in find dialog
 * format document
-
-![example](https://raw.githubusercontent.com/AnWeber/httpbook-grid/main/examples/grid.gif)
-
-
-## Examples
-
-```html
-GET https://httpbin.org/json
-
-```
-
 
 ## License
 [MIT License](LICENSE)

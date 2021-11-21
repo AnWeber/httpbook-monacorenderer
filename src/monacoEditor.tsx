@@ -61,22 +61,22 @@ export class MonacoEditor extends Component<MonacoEditorProps,
 
 
   private getLanguageId(mimeType: string): string {
-    if (/^(application|text|x-httpbookmonaco)\/(.*\+|x-amz-)?json.*$/u.test(mimeType)) {
+    if (/^(application|text|x-monacoeditor)\/(.*\+|x-amz-)?json.*$/u.test(mimeType)) {
       return 'json';
     }
-    if (/^(application|x-httpbookmonaco)\/(x-)?javascript$/u.test(mimeType)) {
+    if (/^(application|x-monacoeditor)\/(x-)?javascript$/u.test(mimeType)) {
       return 'javascript';
     }
-    if (/^(application|text|image|x-httpbookmonaco)\/(.*\+)?xml.*$/u.test(mimeType)) {
+    if (/^(application|text|image|x-monacoeditor)\/(.*\+)?xml.*$/u.test(mimeType)) {
       return 'xml';
     }
-    if (/^(text|x-httpbookmonaco)\/html$/u.test(mimeType)) {
+    if (/^(text|x-monacoeditor)\/html$/u.test(mimeType)) {
       return 'html';
     }
-    if (/^(text|x-httpbookmonaco)\/css$/u.test(mimeType)) {
+    if (/^(text|x-monacoeditor)\/css$/u.test(mimeType)) {
       return 'css';
     }
-    if (/^(text|x-httpbookmonaco)\/markdown$/u.test(mimeType)) {
+    if (/^(text|x-monacoeditor)\/markdown$/u.test(mimeType)) {
       return 'markdown';
     }
     return 'plaintext';

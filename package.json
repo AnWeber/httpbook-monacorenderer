@@ -1,8 +1,8 @@
 {
   "name": "httpbook-monacorenderer",
-  "displayName": "httpBook - Monaco Editor Renderer",
-  "description": "Monaco Editor for httpbook",
-  "version": "1.1.0",
+  "displayName": "Monaco Editor Renderer",
+  "description": "Monaco Editor with Find enabled",
+  "version": "2.0.0",
   "publisher": "anweber",
   "homepage": "https://github.com/AnWeber/httpbook-monacorenderer",
   "repository": {
@@ -14,48 +14,42 @@
   },
   "qna": "https://github.com/AnWeber/httpbook-monacorenderer/discussions",
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.62.0"
   },
   "categories": [
     "Notebooks"
   ],
   "keywords": [
-    "HTTP",
-    "Httpbook",
+    "Notebook Renderer",
     "MonacoEditor"
   ],
   "icon": "icon.png",
-  "preview": true,
-  "activationEvents": [
-    "onNotebook:http",
-    "onLanguage:http"
-  ],
-  "main": "./dist/extension.js",
   "capabilities": {
-    "virtualWorkspaces": true
+    "virtualWorkspaces": true,
+    "untrustedWorkspaces": {
+      "supported": true
+    }
   },
   "contributes": {
     "notebookRenderer": [
       {
-        "id": "httpbook-monaco",
+        "id": "monacorenderer",
         "entrypoint": "./dist/monacoRenderer.js",
-        "displayName": "httpbook",
+        "displayName": "Monaco Renderer",
         "mimeTypes": [
-          "x-application/httpbook-monaco-editor",
-          "x-httpbookmonaco/json",
-          "x-httpbookmonaco/css",
-          "x-httpbookmonaco/html",
-          "x-httpbookmonaco/markdown",
-          "x-httpbookmonaco/plain",
-          "x-httpbookmonaco/javascript",
-          "x-httpbookmonaco/xml"
+          "application/javascript",
+          "application/json",
+          "application/x-javascript",
+          "application/xml",
+          "text/css",
+          "text/javascript",
+          "text/markdown",
+          "text/plain",
+          "text/xml"
         ]
       }
     ]
   },
-  "extensionDependencies": [
-    "anweber.httpbook"
-  ],
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "webpack --mode production --config ./webpack.config.js",
@@ -66,32 +60,31 @@
     "precommit": "npm run lint"
   },
   "devDependencies": {
-    "@types/node": "^16.10.9",
-    "@types/react": "^17.0.29",
-    "@types/vscode": "1.60.0",
+    "@types/node": "^16.11.9",
+    "@types/react": "^17.0.36",
+    "@types/vscode": "1.62.0",
     "@types/vscode-notebook-renderer": "^1.60.0",
     "@types/webpack-env": "^1.16.3",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "css-loader": "^6.4.0",
-    "eslint": "^8.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.3.0",
     "eslint-plugin-node": "^11.1.0",
     "file-loader": "^6.2.0",
-    "fork-ts-checker-webpack-plugin": "^6.3.4",
-		"httpyac": "^4.2.1",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.2.3",
+    "fork-ts-checker-webpack-plugin": "^6.4.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.1",
     "lockfile-lint": "^4.6.2",
-    "monaco-editor-webpack-plugin": "^5.0.0",
-    "style-loader": "^3.3.0",
+    "monaco-editor-webpack-plugin": "^6.0.0",
+    "style-loader": "^3.3.1",
     "thread-loader": "^3.0.4",
     "ts-loader": "^9.2.6",
-    "typescript": "^4.4.4",
-    "webpack": "^5.58.2",
-    "webpack-cli": "^4.9.0"
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "monaco-editor": "^0.29.1",
+    "monaco-editor": "^0.30.1",
     "preact": "^10.5.15"
   }
 }

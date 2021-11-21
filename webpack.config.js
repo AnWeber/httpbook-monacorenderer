@@ -6,73 +6,12 @@ const path = require('path');
 const devServerPort = 8111;
 
 module.exports = [(env, argv) => {
-
-    /**@type {import('webpack').Configuration}*/
-    const config = {
-      target: 'node',
-      mode: 'none',
-
-      entry: './src/extension/extension.ts',
-      output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'extension.js',
-        library: {
-          type: 'commonjs2',
-        },
-      },
-      devtool: argv.mode === 'development' ? 'eval-cheap-module-source-map' : 'nosources-source-map',
-      externals: {
-        vscode: 'commonjs vscode',
-        httpyac: 'httpyac'
-      },
-      resolve: {
-        extensions: ['.ts', '.js']
-      },
-      module: {
-        rules: [
-          {
-            test: /\.ts$/,
-            exclude: /node_modules/,
-            use: [
-              {
-                loader: 'thread-loader',
-              },
-              {
-                loader: 'ts-loader',
-                options: {
-                  happyPackMode: true
-                }
-              }
-            ]
-          }
-        ]
-      },
-      plugins: [
-        new ForkTsCheckerWebpackPlugin({
-          async: true,
-          typescript: {
-            diagnosticOptions: {
-              semantic: true,
-              syntactic: true,
-            },
-          },
-          eslint: {
-            files: ['./src/extension/**/*.{ts,tsx,js,jsx}']
-          }
-        })
-      ],
-      cache: {
-        type: 'memory',
-      },
-    };
-    return config;
-  },(env, argv) => {
   /**@type {import('webpack').Configuration}*/
   const config = {
     mode: argv.mode,
     devtool: argv.mode === 'development' ? 'eval-cheap-module-source-map' : false,
     entry: {
-      monacoRenderer: './src/renderer/monacoRenderer.tsx',
+      monacoRenderer: './src/monacoRenderer.tsx',
     },
     output: {
       path: path.join(__dirname, 'dist'),
@@ -97,7 +36,6 @@ module.exports = [(env, argv) => {
               loader: 'ts-loader',
               options: {
                 happyPackMode: true,
-                configFile: 'src/renderer/tsconfig.json',
                 transpileOnly: true,
                 compilerOptions: {
                   noEmit: false,
@@ -150,14 +88,13 @@ module.exports = [(env, argv) => {
       new ForkTsCheckerWebpackPlugin({
         async: true,
         typescript: {
-          tsconfig: 'src/renderer/tsconfig.json',
           diagnosticOptions: {
             semantic: true,
             syntactic: true,
           },
         },
         eslint: {
-          files: ['./src/renderer/**/*.{ts,tsx,js,jsx}']
+          files: ['./src/**/*.{ts,tsx,js,jsx}']
         }
       }),
     ],
