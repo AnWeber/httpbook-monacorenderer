@@ -1,3 +1,8 @@
+## 2.0.2 (2022-11-13)
+
+- update Monaco-Editor
+- update mimetypes
+
 ## 2.0.1 (2022-01-27)
 
 - update Monaco-Editor

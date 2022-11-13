@@ -74,6 +74,10 @@ export class MonacoEditor extends Component<MonacoEditorProps, { editor: editor.
     if (/^(text|x-monacoeditor)\/markdown$/u.test(mimeType)) {
       return 'markdown';
     }
+    const textxMimeType = 'text/x-';
+    if (mimeType.startsWith(textxMimeType)) {
+      return mimeType.slice(textxMimeType.length);
+    }
     return 'plaintext';
   }
 
