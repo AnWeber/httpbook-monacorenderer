@@ -14,7 +14,7 @@
   },
   "qna": "https://github.com/AnWeber/httpbook-monacorenderer/discussions",
   "engines": {
-    "vscode": "^1.62.0"
+    "vscode": "^1.73.0"
   },
   "categories": [
     "Notebooks"
