@@ -1,3 +1,7 @@
+## 2.1.0 (2022-09-01)
+
+- update Monaco-Editor
+
 ## 2.0.2 (2022-11-13)
 
 - update Monaco-Editor

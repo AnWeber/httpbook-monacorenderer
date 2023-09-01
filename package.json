@@ -2,7 +2,7 @@
   "name": "httpbook-monacorenderer",
   "displayName": "Monaco Editor Renderer",
   "description": "Monaco Editor with Find enabled",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "publisher": "anweber",
   "homepage": "https://github.com/AnWeber/httpbook-monacorenderer",
   "repository": {
@@ -126,10 +126,10 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "npm run build",
     "format": "prettier --write --parser typescript \"src/**/*.ts?(x)\"",
-    "compile": "webpack --mode production --config ./webpack.config.js",
-    "watch": "webpack --mode development --watch --config ./webpack.config.js",
+    "build": "webpack --mode production --config ./webpack.config.js",
+    "start": "webpack --mode development --watch --config ./webpack.config.js",
     "lockfile-lint": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm --validate-checksum --validate-integrity",
     "eslint": "eslint src --ext tsx",
     "lint": "npm run format && npm run eslint && npm run lockfile-lint",
@@ -148,10 +148,10 @@
     "eslint-config-prettier": "^8.5.0",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^7.2.13",
-    "husky": "^8.0.2",
-    "lint-staged": "^13.0.3",
-    "lockfile-lint": "^4.9.6",
-    "monaco-editor-webpack-plugin": "^7.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "lockfile-lint": "^4.12.1",
+    "monaco-editor-webpack-plugin": "^7.1.0",
     "prettier": "^2.7.1",
     "style-loader": "^3.3.1",
     "thread-loader": "^3.0.4",
@@ -161,7 +161,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "monaco-editor": "^0.34.1",
+    "monaco-editor": "^0.41.0",
     "preact": "^10.11.2"
   }
 }

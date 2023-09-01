@@ -42,7 +42,7 @@ export class MonacoEditor extends Component<MonacoEditorProps, { editor: editor.
       if (model) {
         model.onDidChangeContent(() => {
           setTimeout(() => {
-            monacoEditor.getAction('editor.action.formatDocument').run();
+            monacoEditor.getAction('editor.action.formatDocument')?.run();
           }, 100);
         });
       }
