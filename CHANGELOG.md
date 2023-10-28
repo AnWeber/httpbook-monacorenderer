@@ -1,3 +1,8 @@
+## 2.1.1 (2022-10-28)
+
+- update Monaco-Editor
+- remove markdown support till dotnet/interactive#3288 is resolved (#8)
+
 ## 2.1.0 (2022-09-01)
 
 - update Monaco-Editor

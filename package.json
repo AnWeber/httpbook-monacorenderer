@@ -2,7 +2,7 @@
   "name": "httpbook-monacorenderer",
   "displayName": "Monaco Editor Renderer",
   "description": "Monaco Editor with Find enabled",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "publisher": "anweber",
   "homepage": "https://github.com/AnWeber/httpbook-monacorenderer",
   "repository": {
@@ -44,7 +44,6 @@
           "application/xml",
           "text/css",
           "text/javascript",
-          "text/markdown",
           "text/plain",
           "text/xml",
           "text/latex",
@@ -81,7 +80,6 @@
           "text/x-lexon",
           "text/x-lua",
           "text/x-m3",
-          "text/x-markdown",
           "text/x-mips",
           "text/x-msdax",
           "text/x-mysql",
@@ -136,7 +134,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.8.9",
-    "@types/react": "^18.2.32",
+    "@types/react": "^18.2.33",
     "@types/vscode": "1.73.0",
     "@types/vscode-notebook-renderer": "^1.72.2",
     "@types/webpack-env": "^1.18.3",
